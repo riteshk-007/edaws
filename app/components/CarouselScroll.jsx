@@ -23,7 +23,7 @@ const CarouselScroll = ({ images }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     arrows: false,
     pauseOnHover: true,
     responsive: [
@@ -56,13 +56,7 @@ const CarouselScroll = ({ images }) => {
       <Slider ref={sliderRef} {...settings}>
         {images.map((image, index) => (
           <div key={index} className="w-full ">
-            <Image
-              src={image.src}
-              alt="carousel"
-              width={1920}
-              height={1080}
-              layout="responsive"
-            />
+            <Image src={image.src} alt="carousel" width={2000} height={1200} />
           </div>
         ))}
       </Slider>

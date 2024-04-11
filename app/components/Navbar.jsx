@@ -16,8 +16,8 @@ const Navbar = () => {
           Support Education: Small Steps, Big Dreams.
         </span>
       </span>
-      <nav className="bg-white border border-gray-100">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className="bg-white border border-gray-200">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
           <Link
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
