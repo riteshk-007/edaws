@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
       <span className="w-full p-1 text-center bg-gradient-to-r from-amber-800 to-from-amber-800 block rtl:from-amber-800 rtl:to-brfrom-amber-800">
         <span className="text-sm sm:text-xs tracking-widest font-semibold">
-          Support Education: Your donation can shape a child&apos;s future
+          Support Education: Small Steps, Big Dreams.
         </span>
       </span>
       <nav className="bg-white border border-gray-100">
