@@ -72,7 +72,7 @@ const Footer = () => {
 
             <li>
               <Link
-                href="/"
+                href="/contact"
                 className="text-gray-700 transition hover:text-gray-700/75"
               >
                 {" "}
