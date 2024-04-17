@@ -78,13 +78,13 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded overflow-hidden p-1 shadow-md bg-orange-600/30 border md:w-[450px]"
+            className="w-[350px] max-w-full relative rounded overflow-hidden shadow-lg md:w-[450px]"
             key={idx}
           >
             <Image
               src={item.image}
               width={600}
-              height={400}
+              height={200}
               alt="children"
               className="rounded object-cover w-full h-full"
             />
