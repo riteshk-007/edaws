@@ -1,3 +1,4 @@
+import Cta from "./components/Cta";
 import Hero from "./components/Hero";
 import { ImgCard } from "./components/ImgCard";
 import Mission from "./components/Mission";
@@ -12,6 +13,7 @@ export default function Home() {
       <Providing />
       {/* <IndiaMap /> */}
       <Mission />
+      <Cta />
     </>
   );
 }
