@@ -1,4 +1,5 @@
 import Cta from "./components/Cta";
+import IndiaStatesTable from "./components/Data";
 import Hero from "./components/Hero";
 import { ImgCard } from "./components/ImgCard";
 import Mission from "./components/Mission";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <ImgCard />
       <Providing />
+      <IndiaStatesTable />
       {/* <IndiaMap /> */}
       <Mission />
       <Cta />
