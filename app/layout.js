@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./Footer";
 import DonateBtn from "./components/DonateBtn";
+import { ViewTransitions } from "next-view-transitions";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-white text-black">
-      <body className={inter.className}>
-        <Navbar />
-        <DonateBtn />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" className="bg-white text-black">
+        <body className={inter.className}>
+          <Navbar />
+          <DonateBtn />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

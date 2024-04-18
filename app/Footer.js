@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Logo from "./other/logo";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const Footer = () => {
   return (
