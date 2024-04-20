@@ -28,6 +28,7 @@ const Checkout = ({ data }) => {
               setShowThanks(false);
             }, 10000);
           }, 4000);
+          window.location.reload();
         },
         prefill: {
           name: data?.name,
