@@ -18,7 +18,6 @@ const Pay = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     setCheckoutData(data);
   };
 

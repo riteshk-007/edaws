@@ -1,9 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const Checkout = ({ data }) => {
-  const router = useRouter();
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
@@ -17,7 +15,7 @@ const Checkout = ({ data }) => {
         currency: "INR",
         name: "edaws - Educational development And Agriculture Welfare Society",
         description:
-          "edaws - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+          "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
         image: "/logo.png",
         handler: function (response) {
           alert("Payment Successful");
