@@ -34,7 +34,7 @@ const Checkout = ({ data }) => {
       const rzp = new window.Razorpay(options);
       rzp.open();
     };
-  }, [data, router]);
+  }, [data]);
 
   return null;
 };
