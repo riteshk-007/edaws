@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Thanks from "./Thanks";
+import { set } from "react-hook-form";
 
 const Checkout = ({ data }) => {
   const [showThanks, setShowThanks] = useState(false); // State to control the visibility of the Thanks component
@@ -28,7 +29,9 @@ const Checkout = ({ data }) => {
               setShowThanks(false);
             }, 10000);
           }, 4000);
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+          }, 5000);
         },
         prefill: {
           name: data?.name,
