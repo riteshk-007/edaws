@@ -5,6 +5,7 @@ import {
   FaMoneyBillAlt,
   FaUserAlt,
   FaEnvelope,
+  FaIdCard,
   FaPhoneAlt,
 } from "react-icons/fa";
 import Checkout from "./Checkout";
@@ -32,7 +33,9 @@ const Pay = () => {
       }}
     >
       <div className="shadow-lg rounded-lg p-8 w-full max-w-md bg-orange-100 ">
-        <h2 className="text-2xl font-bold mb-6 text-center">Donation Form</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-orange-500">
+          Donation Form
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <label htmlFor="name" className=" font-bold mb-2 flex items-center">
@@ -92,6 +95,33 @@ const Pay = () => {
             />
             {errors.phone && (
               <div className="text-red-500 mt-2">{errors.phone.message}</div>
+            )}
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="panNumber"
+              className=" font-bold mb-2 flex items-center"
+            >
+              <FaIdCard className="inline-block mr-2 text-gray-500" />
+              PAN Number
+            </label>
+            <input
+              type="text"
+              id="panNumber"
+              {...register("panNumber", {
+                required: "PAN number is required",
+                pattern: {
+                  value: /^[A-Za-z]{5}\d{4}[A-Za-z]{1}$/,
+                  message: "Invalid PAN number format",
+                },
+              })}
+              className="border-2 border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+              placeholder="Enter your PAN number"
+            />
+            {errors.panNumber && (
+              <div className="text-red-500 mt-2">
+                {errors.panNumber.message}
+              </div>
             )}
           </div>
           <div className="mb-6">
