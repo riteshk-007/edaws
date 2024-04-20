@@ -34,7 +34,7 @@ const Cta = () => {
           </div>
           <div className="mt-4">
             <Link
-              href="/"
+              href="/donation"
               className="inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none"
             >
               Donate Now

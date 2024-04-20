@@ -1,7 +1,9 @@
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { Link } from "next-view-transitions";
 const DonateBtn = () => {
   return (
-    <div
+    <Link
+      href="/donation"
       className="fixed top-3/4 right-0 bg-orange-500 p-3 rounded-l-full shadow-md z-50 flex items-center justify-center gap-2 cursor-pointer"
       style={{
         boxShadow:
@@ -10,7 +12,7 @@ const DonateBtn = () => {
     >
       <FaHandHoldingHeart className="text-white transform scale-x-[-1] text-xl" />
       <span className="text-white font-semibold uppercase">Donate</span>
-    </div>
+    </Link>
   );
 };
 

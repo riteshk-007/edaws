@@ -95,9 +95,12 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <button className="md:hidden inline-flex items-center justify-center w-full py-2 text-sm font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                <Link
+                  href={"/donation"}
+                  className="md:hidden inline-flex items-center justify-center w-full py-2 text-sm font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
                   Donate
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
