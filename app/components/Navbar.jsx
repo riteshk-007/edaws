@@ -102,9 +102,12 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <button className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">
+          <Link
+            href="/donation"
+            className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          >
             Donate
-          </button>
+          </Link>
         </div>
       </nav>
     </>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   FaMoneyBillAlt,
@@ -7,8 +7,10 @@ import {
   FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
+import Checkout from "./Checkout";
 
-const DonationForm = () => {
+const Pay = () => {
+  const [checkoutData, setCheckoutData] = useState(null);
   const {
     register,
     handleSubmit,
@@ -17,11 +19,20 @@ const DonationForm = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    setCheckoutData(data);
   };
 
   return (
-    <div className="bg-gray-100 py-12 flex justify-center items-center">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+    <div
+      className=" py-12 flex justify-center items-center w-full "
+      style={{
+        backgroundImage: "url('/back.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        minHeight: "100vh",
+      }}
+    >
+      <div className="shadow-lg rounded-lg p-8 w-full max-w-md bg-orange-100 ">
         <h2 className="text-2xl font-bold mb-6 text-center">Donation Form</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
@@ -91,11 +102,12 @@ const DonationForm = () => {
             >
               <FaMoneyBillAlt className="inline-block mr-2 text-gray-500" />
               Donation Amount (INR{" "}
-              <span className="text-green-500 font-bold mx-[2px]">₹</span>)
+              <span className="text-green-500 font-bold">₹</span>)
             </label>
             <input
               type="number"
               id="amount"
+              min={1}
               {...register("amount", {
                 required: "Donation amount is required",
               })}
@@ -108,14 +120,15 @@ const DonationForm = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-full"
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg w-full"
           >
             Submit Donation
           </button>
         </form>
       </div>
+      {checkoutData && <Checkout data={checkoutData} />}
     </div>
   );
 };
 
-export default DonationForm;
+export default Pay;
