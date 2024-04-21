@@ -110,7 +110,7 @@ const About = () => {
         </div>
         <div className="flex items-center justify-center w-full md:w-1/2 p-3 mt-5">
           <Image
-            src="/about/3.jpg"
+            src="/about/3.png"
             alt="about"
             width={1920}
             height={1080}

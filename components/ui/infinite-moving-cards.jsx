@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -77,7 +78,8 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <li
+          <Link
+            href="/gallery"
             className="w-[350px] max-w-full relative rounded overflow-hidden shadow-lg md:w-[450px]"
             key={idx}
           >
@@ -88,7 +90,7 @@ export const InfiniteMovingCards = ({
               alt="children"
               className="rounded object-cover w-full h-full"
             />
-          </li>
+          </Link>
         ))}
       </ul>
     </div>
