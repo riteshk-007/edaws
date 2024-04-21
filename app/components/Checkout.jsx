@@ -4,8 +4,7 @@ import Thanks from "./Thanks";
 import { set } from "react-hook-form";
 
 const Checkout = ({ data }) => {
-  const [showThanks, setShowThanks] = useState(false); // State to control the visibility of the Thanks component
-
+  const [showThanks, setShowThanks] = useState(false);
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
@@ -28,10 +27,10 @@ const Checkout = ({ data }) => {
             setTimeout(() => {
               setShowThanks(false);
             }, 10000);
-          }, 4000);
+          }, 2000);
           setTimeout(() => {
             window.location.reload();
-          }, 5000);
+          }, 6000);
         },
         prefill: {
           name: data?.name,
