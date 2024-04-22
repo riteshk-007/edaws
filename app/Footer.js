@@ -62,16 +62,6 @@ const Footer = () => {
 
             <li>
               <Link
-                href="/gallery"
-                className="text-gray-700 transition hover:text-gray-700/75"
-              >
-                {" "}
-                Gallery{" "}
-              </Link>
-            </li>
-
-            <li>
-              <Link
                 href="/contact"
                 className="text-gray-700 transition hover:text-gray-700/75"
               >
@@ -86,6 +76,15 @@ const Footer = () => {
               >
                 {" "}
                 Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Terms-of-service"
+                className="text-gray-700 transition hover:text-gray-700/75"
+              >
+                {" "}
+                Terms of Service
               </Link>
             </li>
           </ul>
