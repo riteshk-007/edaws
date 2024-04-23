@@ -18,8 +18,20 @@ const Pay = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setCheckoutData(data);
+    const user = await fetch("/api/users", {
+      method: "GET",
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (user.ok) {
+      console.log("Users fetched successfully");
+    } else {
+      console.log("Something went wrong");
+    }
   };
 
   return (

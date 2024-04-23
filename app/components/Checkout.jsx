@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Thanks from "./Thanks";
-import { set } from "react-hook-form";
 
 const Checkout = ({ data }) => {
   const [showThanks, setShowThanks] = useState(false);
@@ -20,7 +19,26 @@ const Checkout = ({ data }) => {
         description:
           "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
         image: "/logo.png",
-        handler: function (response) {
+        handler: async function (response) {
+          const res = await fetch("/api/users", {
+            cache: "no-cache",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: data?.name,
+              email: data?.email,
+              phone: data?.phone,
+              pan: data?.panNumber,
+              amount: data?.amount,
+            }),
+          });
+          if (res.ok) {
+            console.log("User created successfully");
+          } else {
+            console.log("Something went wrong");
+          }
           alert("Payment Successful");
           setTimeout(() => {
             setShowThanks(true);
