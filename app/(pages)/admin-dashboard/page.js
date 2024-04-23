@@ -1,16 +1,31 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  const tableItems = [
-    {
-      name: "Ritesh",
-      email: "test@gmail.com",
-      phone: "1234567890",
-      pan: "ABCD1234E",
-      amount: "$100",
-    },
-  ];
+  const [user, setUser] = useState([]);
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch("/api/users", {
+        method: "GET",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        console.log("Users fetched successfully");
+        const data = await response.json();
+        setUser(data);
+      } else {
+        console.log("Something went wrong");
+      }
+    };
+
+    fetchUsers();
+  }, []);
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8 my-5">
       <div className="max-w-lg">
@@ -32,19 +47,38 @@ const Dashboard = () => {
               <th className="py-3 px-6">Email</th>
               <th className="py-3 px-6">Phone No.</th>
               <th className="py-3 px-6">Pan No.</th>
-              <th className="py-3 px-6">Amount</th>
+              <th className="py-3 px-6">
+                Amount
+                <span className="text-xs text-gray-400 font-normal">
+                  {" "}
+                  (INR)
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody className="text-gray-600 divide-y">
-            {tableItems.map((item, idx) => (
-              <tr key={idx}>
-                <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.email}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.phone}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.pan}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.amount}</td>
+            {!user || !user.data || user.data.length === 0 ? (
+              <tr>
+                <td colSpan={5}>
+                  <div className="animate-pulse flex flex-col  p-2 ">
+                    <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
+                    <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
+                    <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
+                    <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
+                  </div>
+                </td>
               </tr>
-            ))}
+            ) : (
+              user.data.map((item, idx) => (
+                <tr key={idx}>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.email}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.phone}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.pan}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.amount}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
