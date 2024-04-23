@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const IndiaStatesTable = () => {
   const stateData = [
@@ -34,14 +35,14 @@ const IndiaStatesTable = () => {
   ];
 
   return (
-    <div className="w-full overflow-x-auto ">
+    <div className="w-full overflow-x-auto relative">
       <h1 className="mb-4 text-white text-xl bg-[#ea793d] p-3 text-center capitalize">
         This table shows the estimated number of poor children and children
         unable to attend school due to poverty in each state of India as of
         2024.
       </h1>
       <table className="w-full table-auto border-collapse">
-        <thead>
+        <thead className="z-10">
           <tr className="bg-gray-200">
             <th className="px-4 py-2 text-left">No.</th>
             <th className="px-4 py-2 text-left">State</th>
@@ -73,6 +74,9 @@ const IndiaStatesTable = () => {
           ))}
         </tbody>
       </table>
+      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-35 w-full lg:w-3/4 h-auto">
+        <Image width={2000} height={2000} src="/india.png" alt="India Map" />
+      </span>
     </div>
   );
 };

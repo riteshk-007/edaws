@@ -4,7 +4,6 @@ import Faq from "./components/Faq";
 import Hero from "./components/Hero";
 import { ImgCard } from "./components/ImgCard";
 import Mission from "./components/Mission";
-// import IndiaMap from "./components/IndiaMap";
 import Providing from "./components/Providing";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <ImgCard />
       <Providing />
       <IndiaStatesTable />
-      {/* <IndiaMap /> */}
       <Mission />
       <Cta />
       <Faq />
