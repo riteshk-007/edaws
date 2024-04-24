@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.6",
     "@formspree/react": "^2.5.1",
     "@prisma/client": "^5.12.1",
     "bcryptjs": "^2.4.3",

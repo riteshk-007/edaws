@@ -9,6 +9,7 @@ import { AuthProvider } from "./(pages)/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  manifest: "/manifest.json",
   title: {
     default: "EDAWS - Educational development And Agriculture Welfare Society",
   },
@@ -24,6 +25,9 @@ export const metadata = {
     image: "/opengraph-image.png",
   },
   metadataBase: process.env.NEXT_PUBLIC_BASE_URL,
+};
+export const viewport = {
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }) {

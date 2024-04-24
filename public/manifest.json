@@ -1,0 +1,29 @@
+{
+  "id": 3,
+  "name": "EDAWS - Educational development And Agriculture Welfare Society",
+  "short_name": "EDAWS",
+  "description": "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
