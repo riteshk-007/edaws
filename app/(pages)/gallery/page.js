@@ -1,6 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title:
+    "Gallery | EDAWS - Educational development And Agriculture Welfare Society | Donatation",
+  description:
+    "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+};
 const Gallery = () => {
   const images = [
     "/img/1.png",

@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
+export const metadata = {
+  title:
+    "About Us | EDAWS - Educational development And Agriculture Welfare Society | Donatation",
+  description:
+    "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+};
 const About = () => {
   return (
     <div className="flex flex-col">

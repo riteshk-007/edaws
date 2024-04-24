@@ -14,6 +14,16 @@ export const metadata = {
   },
   description:
     "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+
+  twitter: {
+    card: "summary_large_image",
+    image: "/opengraph-image.png",
+  },
+  facebook: {
+    card: "summary_large_image",
+    image: "/opengraph-image.png",
+  },
+  metadataBase: process.env.NEXT_PUBLIC_BASE_URL,
 };
 
 export default function RootLayout({ children }) {

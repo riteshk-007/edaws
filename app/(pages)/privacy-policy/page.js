@@ -1,5 +1,12 @@
 import React from "react";
 
+export const metadata = {
+  title:
+    "Privacy Policy | EDAWS - Educational development And Agriculture Welfare Society | Donatation",
+  description:
+    "EDAWS - Educational development And Agriculture Welfare Society is a non-profit organization that works for the welfare of the society.",
+};
+
 const PrivacyPolicy = () => {
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
