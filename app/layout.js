@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./Footer";
 import DonateBtn from "./components/DonateBtn";
 import { ViewTransitions } from "next-view-transitions";
+import { AuthProvider } from "./(pages)/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="en" className="bg-white text-black">
         <body className={inter.className}>
-          <Navbar />
-          <DonateBtn />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Navbar />
+            <DonateBtn />
+            {children}
+            <Footer />
+          </AuthProvider>
         </body>
       </html>
     </ViewTransitions>

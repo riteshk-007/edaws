@@ -4,17 +4,34 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const AdminForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const res = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      if (res.error) {
+        throw new Error(res.error);
+      }
+
+      router.push("/admin-dashboard");
+    } catch (error) {
+      console.error("An error occurred during sign in:", error.message);
+    }
   };
   return (
     <main
