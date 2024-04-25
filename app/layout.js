@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import DonateBtn from "./components/DonateBtn";
 import { ViewTransitions } from "next-view-transitions";
 import { AuthProvider } from "./(pages)/Provider";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <DonateBtn />
             {children}
+            <Analytics />
             <Footer />
           </AuthProvider>
         </body>
