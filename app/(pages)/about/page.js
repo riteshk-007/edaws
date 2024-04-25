@@ -41,7 +41,7 @@ const About = () => {
 
         <div className="flex items-start justify-center w-full md:w-1/2 p-3 flex-col">
           <h2 className="text-2xl font-semibold my-1 text-black">
-            Company&apos;s Journey
+            NGO&apos;s Journey
           </h2>
           <p className="text-md text-gray-800">
             Edaws - Educational Development And Agriculture Welfare Society, was
