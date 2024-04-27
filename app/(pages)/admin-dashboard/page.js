@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [user, setUser] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
+  const [isLoading, setIsLoading] = useState(true);
 
   // fetch users
   useEffect(() => {
@@ -33,12 +34,19 @@ const Dashboard = () => {
 
     fetchUsers();
   }, []);
+  useEffect(() => {
+    if (user) {
+      setIsLoading(false);
+    }
+  }, [user]);
 
   // pagination
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
-  const currentItems = user?.data?.slice(firstItemIndex, lastItemIndex);
+  const currentItems = user?.data
+    ?.slice(firstItemIndex, lastItemIndex)
+    .reverse();
 
   const handleClickNext = () => {
     setCurrentPage(currentPage + 1);
@@ -108,10 +116,17 @@ const Dashboard = () => {
                   (INR)
                 </span>
               </th>
+              <th className="py-3 px-6">
+                Date
+                <span className="text-xs text-gray-400 font-normal">
+                  {" "}
+                  (DD/MM/YYYY)
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody className="text-gray-600 divide-y">
-            {!user || !user.data || user?.data?.length === 0 ? (
+            {isLoading ? (
               <tr>
                 <td colSpan={5}>
                   <div className="animate-pulse flex flex-col  p-2 ">
@@ -120,6 +135,15 @@ const Dashboard = () => {
                     <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
                     <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
                   </div>
+                </td>
+              </tr>
+            ) : !user || !user.data || user?.data?.length === 0 ? (
+              <tr className="bg-white text-center">
+                <td
+                  colSpan={5}
+                  className="px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500"
+                >
+                  No data available
                 </td>
               </tr>
             ) : (
