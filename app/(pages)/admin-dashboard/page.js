@@ -90,17 +90,19 @@ const Dashboard = () => {
           together.
         </p>
       </div>
-      <div className="w-full flex flex-col items-end justify-center space-y-4">
-        <h4 className="text-gray-800 text-end text-base font-semibold mt-8">
-          Download Report
-        </h4>
-        <span
-          onClick={downloadExcel}
-          className="bg-gray-200 p-2 rounded-md shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors duration-200"
-        >
-          <FiDownload fontSize={25} />
-        </span>
-      </div>
+      {user?.data && user.data.length !== 0 && (
+        <div className="w-full flex flex-col items-end justify-center space-y-4">
+          <h4 className="text-gray-800 text-end text-base font-semibold mt-8">
+            Download Report
+          </h4>
+          <span
+            onClick={downloadExcel}
+            className="bg-gray-200 p-2 rounded-md shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors duration-200"
+          >
+            <FiDownload fontSize={25} />
+          </span>
+        </div>
+      )}
       <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto">
         <table className="w-full table-auto text-sm text-left">
           <thead className="bg-gray-50 text-gray-600 font-medium border-b">
@@ -116,20 +118,14 @@ const Dashboard = () => {
                   (INR)
                 </span>
               </th>
-              <th className="py-3 px-6">
-                Date
-                <span className="text-xs text-gray-400 font-normal">
-                  {" "}
-                  (DD/MM/YYYY)
-                </span>
-              </th>
+              <th className="py-3 px-6">Date & Time</th>
             </tr>
           </thead>
           <tbody className="text-gray-600 divide-y">
             {isLoading ? (
               <tr>
-                <td colSpan={5}>
-                  <div className="animate-pulse flex flex-col  p-2 ">
+                <td colSpan={6}>
+                  <div className="animate-pulse flex flex-col w-full p-2 ">
                     <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
                     <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
                     <div className="w-full bg-gray-300 my-1 h-10 rounded-md overflow-hidden"></div>
@@ -140,8 +136,8 @@ const Dashboard = () => {
             ) : !user || !user.data || user?.data?.length === 0 ? (
               <tr className="bg-white text-center">
                 <td
-                  colSpan={5}
-                  className="px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500"
+                  colSpan={6}
+                  className="px-6 py-4  border-gray-200 text-lg font-semibold  leading-5 text-gray-500"
                 >
                   No data available
                 </td>
@@ -155,6 +151,16 @@ const Dashboard = () => {
                   <td className="px-6 py-4 whitespace-nowrap">{item?.pan}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {item?.amount}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {new Date(item?.createdAt).toLocaleString("en-GB", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    })}
                   </td>
                 </tr>
               ))

@@ -20,6 +20,7 @@ model User {
   phone   String
   pan     String
   amount  String
+  createdAt DateTime @default(now())
 }
 model Admin {
  id        String    @id @default(auto()) @map("_id") @db.ObjectId
