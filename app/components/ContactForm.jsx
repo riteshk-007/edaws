@@ -62,9 +62,8 @@ const ContactForm = () => {
                   <h4 className="mb-1 text-xl font-bold text-black ">
                     Our Location
                   </h4>
-                  <p className="text-base text-black ">
-                    S-2, G-221, Gali No-14, Vishwas Park, Uttam Nagar, New
-                    Delhi, India - 110059
+                  <p className="text-base text-black capitalize">
+                    Rasalpur, Jandaha Vaishali, Bihar 844505
                   </p>
                 </div>
               </div>
@@ -124,7 +123,9 @@ const ContactForm = () => {
                   <h4 className="mb-1 text-xl font-bold text-black ">
                     Email Address
                   </h4>
-                  <p className="text-base text-black ">support@edaws.com</p>
+                  <p className="text-base text-black lowercase">
+                    RANVIJAY.RV24@GMAIL.COM
+                  </p>
                 </div>
               </div>
             </div>
