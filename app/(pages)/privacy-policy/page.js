@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
       <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
       <p className="mb-4">
         If you have any questions or concerns about our Privacy Policy, please
-        contact us at support@edaws.com.
+        contact us at ranvijay.rv24@gmail.com.
       </p>
       <h2 className="text-2xl font-semibold mb-2">
         Donations for Education of Poor Children

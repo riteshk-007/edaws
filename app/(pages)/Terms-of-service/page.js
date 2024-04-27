@@ -25,9 +25,9 @@ const TermsofService = () => {
       <h2 className="text-2xl font-semibold mb-2">Intellectual Property</h2>
       <p className="mb-4">
         The content and materials on our website, including but not limited to
-        text, graphics, logos, images, and software, are the property of [Your
-        Website Name] or our licensors and are protected by intellectual
-        property laws. You may not modify, copy, distribute, transmit, display,
+        text, graphics, logos, images, and software, are the property of
+        edaws.in or our licensors and are protected by intellectual property
+        laws. You may not modify, copy, distribute, transmit, display,
         reproduce, publish, license, create derivative works from, or sell any
         information obtained from our website without our express written
         consent.
@@ -52,8 +52,8 @@ const TermsofService = () => {
       <h2 className="text-2xl font-semibold mb-2">Disclaimers</h2>
       <p className="mb-4">
         The information and materials on our website are provided {'"as is"'}{" "}
-        without warranties of any kind, either express or implied. [Your Website
-        Name] does not warrant the accuracy, completeness, or suitability of the
+        without warranties of any kind, either express or implied. edaws.in does
+        not warrant the accuracy, completeness, or suitability of the
         information for any particular purpose.
       </p>
       <h2 className="text-2xl font-semibold mb-2">Limitation of Liability</h2>
@@ -74,7 +74,7 @@ const TermsofService = () => {
       <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
       <p className="mb-4">
         If you have any questions or concerns about these Terms of Service,
-        please contact us at support@edaws.com.
+        please contact us at ranvijay.rv24@gmail.com.
       </p>
       <h2 className="text-2xl font-semibold mb-2">
         Donations for Education of Poor Children
